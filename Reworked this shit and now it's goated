@@ -1,0 +1,43 @@
+h=(b%a);
+r[++top]=h;
+}
+
+}
+return(r[top]);
+}
+
+char * removeLeading(char *str)
+{
+    int idx = 0, j, k = 0;
+char *str1;
+str1 = (char *) malloc(sizeof(char));
+    while (str[idx] == ' ' || str[idx] == '\t' || str[idx] == '\n')
+    {
+        idx++;
+    }
+ 
+    for (j = idx; str[j] != '\0'; j++)
+    {
+        str1[k] = str[j];
+        k++;
+    }
+ 
+    str1[k] = '\0';
+return(str1);
+}
+
+int main(){
+char * input;
+char * output;
+input = (char *) malloc(sizeof(char));
+output = (char *) malloc(sizeof(char));
+printf("Enter an infix Expression: ");
+scanf("%[^\n]s",input);
+strcpy(output,convert(input));
+printf("%s",output);
+strcpy(output,removeLeading(output));
+strcat(output," ");
+printf("\n%d",solve(output));
+getch();
+    return 0;
+}
